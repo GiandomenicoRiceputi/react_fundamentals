@@ -1,43 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
 
+    <script>
+      const root = document.createElement('div')
+      root.id = 'root'
+      document.body.appendChild(root)
 
-<script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+      const element = React.createElement(
+        'div',
+        {className: 'container'},
+        React.createElement(
+          'span',
+          null,
+          'Hello',
+          React.createElement('span', null, 'World'),
+        ),
+      )
 
-<script>
-  const root = document.createElement('div')
-  root.id = 'root'
-  const text = document.createElement('div')
-  text.textContent = 'Hello World'
-  text.className = 'container'
-  root.append(text)
-  document.body.append(root);
-
-  const container =  React.createElement('div',
-    {className: 'container'},
-    React.createElement('span',
-      null, 'Hello',
-      React.createElement('span', null, 'World')))
-
-  const reactRoot = ReactDOM.createRoot(root)
-
-  root.render(container)
-
-</script>
-</body>
+      ReactDOM.render(element, root)
+    </script>
+  </body>
 </html>
-
-
-
 
 <!--&lt;!&ndash; Intro to raw React APIs &ndash;&gt;-->
 <!--&lt;!&ndash; http://localhost:3000/isolated/exercise/02.html &ndash;&gt;-->
@@ -60,7 +55,6 @@
 <!--    }-->
 
 <!--    const root = ReactDOM.unstable_createRoot(rootElement);-->
-
 
 <!--    const element = React.createElement(-->
 <!--      'div',-->
